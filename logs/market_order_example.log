@@ -1,0 +1,19 @@
+2025-04-22 10:14:01 | DEBUG    | trading_bot              | setup_logging:74      | Logging initialised — file: logs/trading_bot.log
+2025-04-22 10:14:01 | INFO     | trading_bot              | main:195              | Trading bot started — command=place
+2025-04-22 10:14:01 | INFO     | trading_bot.client       | __init__:73           | BinanceFuturesClient initialised — base_url=https://testnet.binancefuture.com
+2025-04-22 10:14:01 | DEBUG    | trading_bot.client       | _request:108          | → GET /fapi/v1/ping  params={}
+2025-04-22 10:14:01 | DEBUG    | trading_bot.client       | _request:124          | ← HTTP 200  body={}
+2025-04-22 10:14:01 | DEBUG    | trading_bot              | main:208              | API ping successful.
+2025-04-22 10:14:01 | DEBUG    | trading_bot.validators   | validate_symbol:43    | Symbol validated: BTCUSDT
+2025-04-22 10:14:01 | DEBUG    | trading_bot.validators   | validate_side:52      | Side validated: BUY
+2025-04-22 10:14:01 | DEBUG    | trading_bot.validators   | validate_order_type:61 | Order type validated: MARKET
+2025-04-22 10:14:01 | DEBUG    | trading_bot.validators   | validate_quantity:72  | Quantity validated: 0.001
+2025-04-22 10:14:01 | WARNING  | trading_bot.validators   | validate_price:91     | Price value 'None' was supplied for a MARKET order and will be ignored.
+2025-04-22 10:14:01 | INFO     | trading_bot.validators   | validate_order_params:136 | Validation passed — BUY MARKET BTCUSDT qty=0.001 price=N/A
+2025-04-22 10:14:01 | INFO     | trading_bot.orders       | place_market_order:64 | ── MARKET ORDER ── BUY BTCUSDT qty=0.001
+2025-04-22 10:14:01 | INFO     | trading_bot.client       | place_order:157       | Placing MARKET BUY order — symbol=BTCUSDT qty=0.001 price=MARKET
+2025-04-22 10:14:01 | DEBUG    | trading_bot.client       | _request:108          | → POST /fapi/v1/order  params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'timestamp': 1745314441382, 'recvWindow': 5000, 'signature': '***'}
+2025-04-22 10:14:02 | DEBUG    | trading_bot.client       | _request:124          | ← HTTP 200  body={"orderId":4089893475,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"x-Cb7ytekJ-a3b12c","price":"0","avgPrice":"93412.50000","origQty":"0.001","executedQty":"0.001","cumQty":"0.001","cumQuote":"93.41250","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","updateTime":1745314442104}
+2025-04-22 10:14:02 | INFO     | trading_bot.client       | place_order:162       | Order placed successfully — orderId=4089893475
+2025-04-22 10:14:02 | INFO     | trading_bot.orders       | place_market_order:72 | MARKET order filled — orderId=4089893475 executedQty=0.001 avgPrice=93412.50000
+2025-04-22 10:14:02 | INFO     | trading_bot              | main:226              | Trading bot exiting — code=0
