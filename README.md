@@ -258,6 +258,4 @@ All other dependencies are from the Python standard library.
 
 ---
 
-## License
 
-Built for Primetrade.ai — Binance Futures Testnet Assessment Task.
